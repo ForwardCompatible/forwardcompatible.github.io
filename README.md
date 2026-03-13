@@ -4,11 +4,11 @@
 
 | File | Rename to | Purpose |
 |------|-----------|---------|
-| RC_index.html | index.html | Home / Hero page |
-| RC_philosophy.html | philosophy.html | AI Philosophy & Frameworks |
-| RC_resume.html | resume.html | Experience Timeline |
-| RC_contact.html | contact.html | Let's Work Together |
-| RC_style.css | style.css | Shared styles (all pages link to this) |
+| index.html | index.html | Home / Hero page |
+| philosophy.html | philosophy.html | AI Philosophy & Frameworks |
+| resume.html | resume.html | Experience Timeline |
+| contact.html | contact.html | Let's Work Together |
+| style.css | style.css | Shared styles (all pages link to this) |
 
 ## Step 1 — Rename files
 Strip the RC_ prefix from all filenames before uploading.
