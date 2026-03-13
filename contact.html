@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let's Work Together — Ryan Connelly</title>
+  <meta name="description" content="Reach out to Ryan Connelly for employment, consulting, advisory, or just to talk through an idea." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ── LAYOUT ── */
+    .contact-layout {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    /* ── LEFT ── */
+    .contact-left h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.6rem, 2.5vw, 2rem);
+      font-weight: 300;
+      color: var(--blue-deep);
+      margin-bottom: 1.5rem;
+      line-height: 1.35;
+    }
+
+    .contact-left p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      font-weight: 300;
+      line-height: 1.85;
+      max-width: 52ch;
+      margin-bottom: 0;
+    }
+
+    .engagement-list {
+      margin-top: 2.75rem;
+    }
+
+    .engagement-list h4 {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--blue-soft);
+      margin-bottom: 1.25rem;
+    }
+
+    .eng-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .eng-icon {
+      width: 34px;
+      height: 34px;
+      background: var(--blue-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .eng-text strong {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+
+    .eng-text p {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-weight: 300;
+      max-width: none;
+    }
+
+    /* ── FORM ── */
+    .form-card {
+      background: var(--blue-mist);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2.5rem;
+    }
+
+    .form-card h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--blue-deep);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-sub {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.45rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.72rem 1rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--blue-soft);
+    }
+
+    .form-group textarea {
+      height: 115px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 0.88rem;
+      background: var(--blue-deep);
+      color: var(--white);
+      border: none;
+      border-radius: 999px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .form-submit:hover { background: var(--blue-mid); transform: translateY(-2px); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .form-note {
+      font-size: 0.68rem;
+      color: var(--text-light);
+      text-align: center;
+      margin-top: 0.9rem;
+    }
+
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .success-msg h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--blue-deep);
+      margin-bottom: 0.75rem;
+    }
+
+    .success-msg p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 3rem 1.5rem;
+      }
+      .form-row { grid-template-columns: 1fr; }
+      .page-hero-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Ryan Connelly</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="resume.html">Experience</a></li>
+      <li><a href="contact.html" class="nav-cta active">Let's Work Together</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner fade-in">
+      <span class="section-label">Work With Ryan</span>
+      <h1>Let's figure out if we're a fit.</h1>
+      <p>No hard pitch. If it sounds like something I've solved before — or a direction you're not sure how to evaluate — that's worth a conversation.</p>
+    </div>
+  </div>
+
+  <div class="contact-layout">
+
+    <div class="contact-left fade-in">
+      <h2>Looking to fill a position? Need an AI feasibility consultation?</h2>
+      <p>Are you an educator looking to bring an expert in to teach kids about AI safety? Someone who just has an interesting idea and wants to bounce it off a human first? Let's talk.</p>
+      <p style="margin-top:1rem;">I am open to both employment and consulting depending on the situation. The right answer depends on scope, timeline, and what you actually need — not what sounds best on a job posting.</p>
+
+      <div class="engagement-list">
+        <h4>Typical Engagements</h4>
+
+        <div class="eng-item">
+          <div class="eng-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A6B8A" stroke-width="1.5">
+              <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/>
+            </svg>
+          </div>
+          <div class="eng-text">
+            <strong>Full-Time / Hybrid / Remote</strong>
+            <p>Solution architect, AI strategist, data and analytics lead. Open to relocation for the right fit.</p>
+          </div>
+        </div>
+
+        <div class="eng-item">
+          <div class="eng-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A6B8A" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <div class="eng-text">
+            <strong>AI Strategy Consulting</strong>
+            <p>Evaluating AI fit, building the business case, auditing existing implementations for real ROI.</p>
+          </div>
+        </div>
+
+        <div class="eng-item">
+          <div class="eng-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A6B8A" stroke-width="1.5">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div class="eng-text">
+            <strong>Data Infrastructure / BI</strong>
+            <p>SQL, Power BI, analytics platform design, or making sense of data you already have but can't act on.</p>
+          </div>
+        </div>
+
+        <div class="eng-item">
+          <div class="eng-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A6B8A" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="eng-text">
+            <strong>Education / Speaking</strong>
+            <p>AI safety education, workplace AI literacy, or guest instruction for academic institutions.</p>
+          </div>
+        </div>
+
+        <div class="eng-item">
+          <div class="eng-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3A6B8A" stroke-width="1.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div class="eng-text">
+            <strong>Advisory / Fractional</strong>
+            <p>Ongoing strategic guidance without full-time overhead. Good fit for teams building AI capability for the first time.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-card fade-in" style="transition-delay:0.15s;">
+      <h3>Start a conversation</h3>
+      <p class="form-sub">No commitment. Just a message.</p>
+
+      <!--
+        TO ACTIVATE:
+        1. Go to formspree.io, create a free account, and start a new form
+        2. Replace YOUR_FORM_ID below with your actual form ID (e.g. xpwzabcd)
+           action="https://formspree.io/f/xpwzabcd"
+      -->
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Optional" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="type">Type of Engagement</label>
+          <select id="type" name="engagement_type">
+            <option value="">— Not sure yet —</option>
+            <option value="fulltime">Full-Time Role</option>
+            <option value="consulting">AI Strategy Consulting</option>
+            <option value="data">Data / BI Project</option>
+            <option value="education">Education / Speaking</option>
+            <option value="advisory">Advisory / Fractional</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">What's on your mind?</label>
+          <textarea id="message" name="message" placeholder="Describe the situation. The more context the better." required></textarea>
+        </div>
+
+        <button type="submit" class="form-submit" id="submit-btn">Send Message</button>
+        <p class="form-note">Typically responds within 24–48 hours.</p>
+      </form>
+
+      <div class="success-msg" id="success-msg">
+        <h3>Message received.</h3>
+        <p>Thanks for reaching out. I will be in touch within 24–48 hours.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-copy">© 2025 Ryan Connelly · Cartersville, VA · Open to Remote, Hybrid & Relocation</span>
+    <div class="footer-links">
+      <a href="mailto:ryanjayconnelly@gmail.com">ryanjayconnelly@gmail.com</a>
+      <a href="https://linkedin.com/in/ryanjayconnelly" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.06 });
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+
+    const form = document.getElementById('contact-form');
+    const btn = document.getElementById('submit-btn');
+    const success = document.getElementById('success-msg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else { throw new Error(); }
+      } catch {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+        alert('Something went wrong. Please email ryanjayconnelly@gmail.com directly.');
+      }
+    });
+  </script>
+
+</body>
+</html>

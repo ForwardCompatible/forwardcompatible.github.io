@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Philosophy — Ryan Connelly</title>
+  <meta name="description" content="Ryan Connelly's pragmatic framework for evaluating and applying AI in business. Facts over feelings." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ── OPENING STATEMENT ── */
+    .opening {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 5rem 4rem 3rem;
+    }
+
+    .opening-quote {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.15rem, 2vw, 1.5rem);
+      font-weight: 300;
+      color: var(--blue-deep);
+      line-height: 1.7;
+      max-width: 72ch;
+      border-left: 2px solid var(--blue-pale);
+      padding-left: 2rem;
+    }
+
+    .opening-quote em {
+      font-style: italic;
+      color: var(--blue-soft);
+    }
+
+    /* ── PILLARS ── */
+    .pillars {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2rem 4rem 6rem;
+    }
+
+    .pillar {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 2.5rem;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .pillar:last-child { border-bottom: none; }
+
+    .pillar-num {
+      font-family: 'Lora', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--blue-pale);
+      line-height: 1;
+      text-align: right;
+      padding-top: 0.3rem;
+    }
+
+    .pillar-body h3 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 300;
+      color: var(--blue-deep);
+      margin-bottom: 1rem;
+    }
+
+    .pillar-body p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      font-weight: 300;
+      line-height: 1.85;
+      max-width: 64ch;
+      margin-bottom: 1rem;
+    }
+
+    .pillar-body p:last-child { margin-bottom: 0; }
+
+    .pull {
+      margin: 1.25rem 0;
+      padding: 1.2rem 1.5rem;
+      background: var(--blue-mist);
+      border-left: 2px solid var(--blue-soft);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .pull p {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--blue-deep) !important;
+      font-weight: 300;
+    }
+
+    /* ── CTA STRIP ── */
+    .phil-cta {
+      background: var(--blue-mist);
+      border-top: 1px solid var(--border);
+      padding: 5rem 4rem;
+      text-align: center;
+    }
+
+    .phil-cta h2 {
+      margin-bottom: 1rem;
+    }
+
+    .phil-cta p {
+      margin: 0 auto 2rem;
+      font-size: 0.95rem;
+      max-width: 48ch;
+    }
+
+    .phil-cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .opening, .pillars, .phil-cta { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .pillar { grid-template-columns: 1fr; gap: 0.5rem; }
+      .pillar-num { text-align: left; font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Ryan Connelly</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="philosophy.html" class="active">Philosophy</a></li>
+      <li><a href="resume.html">Experience</a></li>
+      <li><a href="contact.html" class="nav-cta">Let's Work Together</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner fade-in">
+      <span class="section-label">The Framework</span>
+      <h1>An inconvenient take on AI in business.</h1>
+      <p>These are not opinions formed from reading whitepapers. They come from two decades of watching companies chase the signal while tripping over the noise.</p>
+    </div>
+  </div>
+
+  <!-- OPENING STATEMENT -->
+  <div class="opening">
+    <p class="opening-quote fade-in">
+      Conventional wisdom is just the starting point.<br><br>
+      True optimization only happens when you treat it as a guidepost instead of gospel.
+      The insights that matter most come from the overlooked places, the foundational
+      assumptions nobody questioned because everything was <em>functionally broken.</em><br><br>
+      No two businesses are the same. Two competitors in the same industry can have
+      identical problems that require completely different solutions, because circumstance
+      changes everything. The same way no two patients present identically to a doctor,
+      no two companies should receive the same prescription.<br><br>
+      I understand what conventional wisdom says. Then I sit down and watch how it
+      actually operates. Facts over feelings. That gap between the two is always
+      where the real work lives.
+    </p>
+  </div>
+
+  <!-- PILLARS -->
+  <div class="pillars">
+
+    <div class="pillar fade-in">
+      <div class="pillar-num">01</div>
+      <div class="pillar-body">
+        <h3>If it costs more time than it saves, it is not AI. It is overhead.</h3>
+        <p>The most overlooked metric in any AI implementation is total interaction time. Prompting, reviewing, correcting, re-prompting, and validating output all cost real hours. When those hours exceed what a skilled human would have spent just doing the task, the ROI is negative regardless of how impressive the demo looked.</p>
+        <div class="pull">
+          <p>If the aggregate time to use an AI tool is greater than the time it would have taken a human, it represents no savings. Full stop.</p>
+        </div>
+        <p>This does not mean AI is the wrong choice. It means measurement matters. The right use cases are ones where speed, scale, or consistency genuinely outperform the human baseline, not just in theory, but on the clock.</p>
+      </div>
+    </div>
+
+    <div class="pillar fade-in">
+      <div class="pillar-num">02</div>
+      <div class="pillar-body">
+        <h3>AI for AI's sake is not innovation. It is a budget line item waiting to be cut.</h3>
+        <p>Organizations under pressure to adopt AI often bolt it onto existing workflows without asking whether those workflows needed AI in the first place. The result is expensive complexity layered on top of a process that was working fine, or was not working, and still will not be.</p>
+        <p>The question that should precede every AI initiative is not how do we use AI here. It is what problem are we actually solving, and is AI the most efficient path to solving it. Sometimes the answer is yes. Often it is not. Knowing the difference is the job.</p>
+      </div>
+    </div>
+
+    <div class="pillar fade-in">
+      <div class="pillar-num">03</div>
+      <div class="pillar-body">
+        <h3>One model does not fit all. Assuming otherwise is how projects fail.</h3>
+        <p>Agentic AI toolchains are only as strong as the fit between model capability and task requirement. A frontier generalist model is not automatically the right choice for every node in a workflow. Specialized tasks benefit from specialized tools, smaller, faster, cheaper, and often more reliable for their specific function.</p>
+        <p>Intelligent architecture means asking what each task actually needs, then selecting or composing accordingly. The goal is a system where every component earns its place.</p>
+      </div>
+    </div>
+
+    <div class="pillar fade-in">
+      <div class="pillar-num">04</div>
+      <div class="pillar-body">
+        <h3>Fine-tuning is trade school, not a luxury. The ROI math is different.</h3>
+        <p>There is a point in any serious AI deployment where the customization you need, the institutional voice, the domain knowledge, the operational specificity, cannot be prompted into a base model. Fine-tuning is the answer, and the cost framing matters enormously here.</p>
+        <div class="pull">
+          <p>Think of fine-tuning as sending a model to trade school. There is an upfront investment, but this is an employee who will never leave the company. Guaranteed ROI, as long as you require its function.</p>
+        </div>
+        <p>Unlike human capital, a fine-tuned model does not resign, does not need benefits, and does not require re-onboarding. The investment case is actually stronger than it looks on a standard cost sheet.</p>
+      </div>
+    </div>
+
+    <div class="pillar fade-in">
+      <div class="pillar-num">05</div>
+      <div class="pillar-body">
+        <h3>Augmentation is the goal. Replacement is a misread of the mission.</h3>
+        <p>The most durable AI implementations share a common trait. They make the humans in the loop faster, more informed, and better at their jobs rather than removing them from the equation. Removal optimizes for short-term cost. Augmentation optimizes for long-term capability.</p>
+        <p>The best signal that an AI deployment is working is not headcount reduction. It is when the people working alongside it could not imagine going back.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="phil-cta">
+    <h2 class="fade-in">These frameworks came from somewhere.</h2>
+    <p class="fade-in">Twenty years across community, data, and systems work — all of it pointing toward the same conviction.</p>
+    <div class="phil-cta-actions fade-in">
+      <a href="resume.html" class="btn-secondary">View the track record</a>
+      <a href="contact.html" class="btn-primary">Let's work together</a>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-copy">© 2025 Ryan Connelly · Cartersville, VA · Open to Remote, Hybrid & Relocation</span>
+    <div class="footer-links">
+      <a href="mailto:ryanjayconnelly@gmail.com">ryanjayconnelly@gmail.com</a>
+      <a href="https://linkedin.com/in/ryanjayconnelly" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.06 });
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>

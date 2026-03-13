@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience — Ryan Connelly</title>
+  <meta name="description" content="Ryan Connelly's professional experience — 20+ years across data, community, analytics, and AI." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ── LAYOUT ── */
+    .resume-layout {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 5rem 4rem;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 100px;
+    }
+
+    .sidebar-block {
+      margin-bottom: 2.5rem;
+    }
+
+    .sidebar-block h4 {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--blue-soft);
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-block p,
+    .sidebar-block a {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-weight: 300;
+      line-height: 1.7;
+      display: block;
+    }
+
+    .sidebar-block a { color: var(--blue-soft); transition: color 0.2s; }
+    .sidebar-block a:hover { color: var(--blue-deep); }
+
+    .skill-group { margin-bottom: 1rem; }
+
+    .skill-group-name {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .tag {
+      font-size: 0.65rem;
+      font-weight: 400;
+      padding: 0.2rem 0.6rem;
+      background: var(--blue-pale);
+      color: var(--blue-deep);
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+    }
+
+    .edu-item {
+      margin-bottom: 0.9rem;
+    }
+
+    .edu-item strong {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.15rem;
+    }
+
+    .edu-item span {
+      font-size: 0.74rem;
+      color: var(--text-light);
+    }
+
+    .download-btn {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-deep);
+      border: 1px solid var(--blue-soft);
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .download-btn:hover {
+      background: var(--blue-deep);
+      color: var(--white);
+      border-color: var(--blue-deep);
+    }
+
+    /* ── TIMELINE ── */
+    .timeline { position: relative; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 10px; bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .tl-item {
+      padding-left: 2rem;
+      padding-bottom: 3.5rem;
+      position: relative;
+    }
+
+    .tl-item:last-child { padding-bottom: 0; }
+
+    .tl-dot {
+      position: absolute;
+      left: -4px; top: 8px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--blue-pale);
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 1px var(--blue-pale);
+    }
+
+    .tl-item.featured .tl-dot {
+      background: var(--blue-soft);
+      box-shadow: 0 0 0 1px var(--blue-soft);
+    }
+
+    .tl-meta {
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 0.3rem;
+    }
+
+    .tl-co {
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue-soft);
+    }
+
+    .tl-period {
+      font-size: 0.66rem;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+    }
+
+    .tl-title {
+      font-family: 'Lora', serif;
+      font-size: 1.35rem;
+      font-weight: 300;
+      color: var(--blue-deep);
+      margin-bottom: 0.7rem;
+    }
+
+    .tl-body {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 62ch;
+      margin-bottom: 0.75rem;
+    }
+
+    .tl-highlights {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .tl-highlights li {
+      font-size: 0.83rem;
+      color: var(--text-light);
+      font-weight: 300;
+      line-height: 1.7;
+      padding-left: 1.1rem;
+      position: relative;
+      margin-bottom: 0.35rem;
+    }
+
+    .tl-highlights li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--blue-pale);
+    }
+
+    .current-block {
+      padding: 1.5rem 1.75rem;
+      background: var(--blue-mist);
+      border-left: 2px solid var(--blue-soft);
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 3rem;
+    }
+
+    .current-block h4 {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--blue-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .current-block p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-weight: 300;
+      max-width: 60ch;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .resume-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 3rem 1.5rem;
+      }
+      .sidebar { position: static; }
+      .page-hero-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Ryan Connelly</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="philosophy.html">Philosophy</a></li>
+      <li><a href="resume.html" class="active">Experience</a></li>
+      <li><a href="contact.html" class="nav-cta">Let's Work Together</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner fade-in">
+      <span class="section-label">Track Record</span>
+      <h1>Twenty years of calling it early.</h1>
+      <p>Not because of luck — because of a consistent methodology for separating signal from noise and building practical frameworks to act on it.</p>
+    </div>
+  </div>
+
+  <div class="resume-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar fade-in">
+
+      <div class="sidebar-block">
+        <h4>Contact</h4>
+        <a href="mailto:ryanjayconnelly@gmail.com">ryanjayconnelly@gmail.com</a>
+        <a href="tel:8044008989">(804) 400-8989</a>
+        <a href="https://linkedin.com/in/ryanjayconnelly" target="_blank">LinkedIn</a>
+        <p style="margin-top:0.5rem; font-size:0.72rem;">Cartersville, VA · Remote / Hybrid / Relocation</p>
+        <a href="ryan_connelly_resume.pdf" download class="download-btn">Download Resume</a>
+      </div>
+
+      <div class="sidebar-block">
+        <h4>Technical</h4>
+        <div class="skill-group">
+          <div class="skill-group-name">Languages & Data</div>
+          <div class="tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">Rust</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Excel</span>
+            <span class="tag">HTML / CSS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">AI / ML</div>
+          <div class="tags">
+            <span class="tag">LLM Architecture</span>
+            <span class="tag">Inference Optimization</span>
+            <span class="tag">Fine-tuning</span>
+            <span class="tag">Agentic Toolchains</span>
+            <span class="tag">Transformers</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">Systems</div>
+          <div class="tags">
+            <span class="tag">API Design</span>
+            <span class="tag">System Architecture</span>
+            <span class="tag">Process Automation</span>
+            <span class="tag">Data Modeling</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <h4>Education</h4>
+        <div class="edu-item">
+          <strong>B.S. Information Systems (In Progress)</strong>
+          <span>Virginia Commonwealth University · 2014–2016</span>
+        </div>
+        <div class="edu-item">
+          <strong>A.S. Business Administration</strong>
+          <span>J. Sargeant Reynolds · 2012–2013</span>
+        </div>
+        <div class="edu-item">
+          <strong>SEO Certification</strong>
+          <span>Bruce Clay Academy</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- TIMELINE -->
+    <main>
+
+      <div class="current-block fade-in">
+        <h4>Current: PolyBox — Local AI Inference Platform</h4>
+        <p>Production-grade local inference platform enabling consumer hardware to run large language models through automated multi-device layer orchestration. Rust/Axum backend, Python inference workers, browser UI. Built as both proof-of-concept and personal validation of AI-augmented development methodology.</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="tl-item featured fade-in">
+          <div class="tl-dot"></div>
+          <div class="tl-meta">
+            <span class="tl-co">T-Mobile</span>
+            <span class="tl-period">2021 – 2023 · Richmond, VA</span>
+          </div>
+          <h3 class="tl-title">Community Planning Analyst</h3>
+          <p class="tl-body">Built enterprise-scale analytics infrastructure for nationwide call center operations. Designed a unified BI platform with hierarchical drill-down from national to agent level across distributed SQL databases — adopted by multiple centers and still in production 18+ months after departure.</p>
+          <ul class="tl-highlights">
+            <li>Reduced report generation time 30% with 5-minute refresh cycles via Power BI deployment</li>
+            <li>Consistently elevated teams to top 1% nationally (top 12 of ~1,200) within 30-day cycles across 12 rotations</li>
+            <li>Drove 38% increase in CSAT and 21% improvement in agent productivity through data-driven coaching</li>
+            <li>Identified 60% data redundancy across enterprise databases, contributing to Snowflake migration planning</li>
+            <li>Managed 3–4 communities simultaneously — 50% above standard assignment — with managers competing for rotation</li>
+          </ul>
+        </div>
+
+        <div class="tl-item fade-in">
+          <div class="tl-dot"></div>
+          <div class="tl-meta">
+            <span class="tl-co">T-Mobile</span>
+            <span class="tl-period">2019 – 2021 · Richmond, VA</span>
+          </div>
+          <h3 class="tl-title">TEX Expert / TEX Tech</h3>
+          <p class="tl-body">Technical support with a pattern: find the systemic problem, build the fix, scale it nationally.</p>
+          <ul class="tl-highlights">
+            <li>Delivered actuarial analysis demonstrating $1.2M in cost savings over a 3-month device retirement period</li>
+            <li>Traced Samsung device failure to BIOS version mismatch between component suppliers; collaborated directly with Samsung liaison on resolution</li>
+            <li>Facilitated first-ever collaboration between field engineering and technical support — reduced ticket send-backs 39%</li>
+            <li>Built Slack-based peer support network that proved critical when COVID-19 forced remote work three weeks later</li>
+          </ul>
+        </div>
+
+        <div class="tl-item fade-in">
+          <div class="tl-dot"></div>
+          <div class="tl-meta">
+            <span class="tl-co">Ethical Success</span>
+            <span class="tl-period">2018 – 2019 · Richmond, VA</span>
+          </div>
+          <h3 class="tl-title">Owner / Data & Marketing Consultant</h3>
+          <p class="tl-body">Solo consulting practice delivering end-to-end digital marketing and analytics infrastructure for SMBs, including forex authority Barbara Rockefeller.</p>
+          <ul class="tl-highlights">
+            <li>Full-stack implementation: website, CRM integrations, custom analytics dashboards</li>
+            <li>Multi-platform campaign management across Google, Facebook, and LinkedIn using data segmentation and A/B testing</li>
+          </ul>
+        </div>
+
+        <div class="tl-item fade-in">
+          <div class="tl-dot"></div>
+          <div class="tl-meta">
+            <span class="tl-co">SuccessWerks LLC</span>
+            <span class="tl-period">2016 – 2017 · Midlothian, VA</span>
+          </div>
+          <h3 class="tl-title">Project Manager / Marketing Analyst</h3>
+          <p class="tl-body">Managed 6+ concurrent PPC campaigns through daily optimization cycles, partnering with clients to define measurable success metrics and build reporting infrastructure around them.</p>
+        </div>
+
+        <div class="tl-item fade-in">
+          <div class="tl-dot"></div>
+          <div class="tl-meta">
+            <span class="tl-co">Volusion Inc.</span>
+            <span class="tl-period">2009 – 2011 · Austin, TX</span>
+          </div>
+          <h3 class="tl-title">Online Community Evangelist</h3>
+          <p class="tl-body">Led full platform migration during peak growth. Implemented a user-voted feature request system creating a direct feedback loop between the business community and the product team. Training content produced here remained live 15+ years later.</p>
+        </div>
+
+        <div class="tl-item featured fade-in">
+          <div class="tl-dot"></div>
+          <div class="tl-meta">
+            <span class="tl-co">Circuit City</span>
+            <span class="tl-period">2007 – 2009 · Richmond, VA</span>
+          </div>
+          <h3 class="tl-title">Online Community Manager / Content Producer</h3>
+          <p class="tl-body">Community feedback on a pre-release Garmin GPS unit led to a product launch delay and feature improvements — resulting in Garmin's best-selling unit at the time. This established online sentiment analysis as a pre-release development tool and SOP.</p>
+          <ul class="tl-highlights">
+            <li>Product reviews syndicated internationally to Reuters, CNN, and PC Gamer</li>
+            <li>Co-hosted industry-first podcast (Tech Sandwich) — 55% listener growth in 3 months</li>
+            <li>Increased community repeat visits 75% and average order value 150%</li>
+            <li>Online sales team remained the last profitable profit center through company closure</li>
+          </ul>
+        </div>
+
+        <div class="tl-item fade-in">
+          <div class="tl-dot"></div>
+          <div class="tl-meta">
+            <span class="tl-co">Circuit City</span>
+            <span class="tl-period">2006 – 2007 · Richmond, VA</span>
+          </div>
+          <h3 class="tl-title">Firedog Support — Senior Leader / Data Analyst</h3>
+          <p class="tl-body">Designed Excel-based workforce intelligence system for a 45-agent program launch. Created a deterministic equation measuring the relationship between workforce performance and customer satisfaction — an early version of the methodology formalized years later at T-Mobile.</p>
+        </div>
+
+        <div class="tl-item fade-in">
+          <div class="tl-dot"></div>
+          <div class="tl-meta">
+            <span class="tl-co">Cavalier Telephone</span>
+            <span class="tl-period">2003 – 2006 · Richmond, VA</span>
+          </div>
+          <h3 class="tl-title">Provisioning Specialist / Technical Support</h3>
+          <p class="tl-body">Advanced through customer service, technical support, and provisioning. Built automation systems reducing a 4-person workload to single-operator capacity.</p>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <span class="footer-copy">© 2025 Ryan Connelly · Cartersville, VA · Open to Remote, Hybrid & Relocation</span>
+    <div class="footer-links">
+      <a href="mailto:ryanjayconnelly@gmail.com">ryanjayconnelly@gmail.com</a>
+      <a href="https://linkedin.com/in/ryanjayconnelly" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.06 });
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
